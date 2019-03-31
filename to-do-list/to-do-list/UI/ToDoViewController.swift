@@ -45,6 +45,10 @@ class ToDoViewController: UITableViewController {
     
     @IBAction func addItem() {
         
+        userInputAlert("Add Todo Item") { text in
+            PersistencyController.sharedInstance.add(text: text)
+        }
+        
     }
 }
 

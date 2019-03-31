@@ -19,4 +19,15 @@ class PersistencyController {
         return realm.objects(ToDoItem.self)
             .sorted(byKeyPath: ToDoItem.Property.isCompleted.rawValue)
     }
+    
+    @discardableResult
+    func add(text: String, in realm: Realm = try! Realm())
+        -> ToDoItem {
+            let item = ToDoItem(text)
+            try! realm.write {
+                realm.add(item)
+            }
+            return item
+    }
+
 }
