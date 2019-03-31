@@ -30,6 +30,13 @@ class PersistencyController {
             return item
     }
     
+    func delete(item: ToDoItem) {
+        guard let realm = item.realm else { return }
+        try! realm.write {
+            realm.delete(item)
+        }
+    }
+    
     func toggleCompleted(item: ToDoItem) {
         guard let realm = item.realm else { return }
         try! realm.write {

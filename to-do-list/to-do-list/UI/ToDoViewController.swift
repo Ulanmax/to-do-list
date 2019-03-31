@@ -58,6 +58,10 @@ class ToDoViewController: UITableViewController {
         PersistencyController.sharedInstance.toggleCompleted(item: item)
     }
     
+    func deleteItem(_ item: ToDoItem) {
+        PersistencyController.sharedInstance.delete(item: item)
+    }
+    
     // MARK: - Actions
     
     @IBAction func addItem() {
@@ -100,6 +104,6 @@ extension ToDoViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let item = items?[indexPath.row],
             editingStyle == .delete else { return }
-        
+        deleteItem(item)
     }
 }
