@@ -54,6 +54,10 @@ class ToDoViewController: UITableViewController {
         
     }
     
+    func toggleItem(_ item: ToDoItem) {
+        PersistencyController.sharedInstance.toggleCompleted(item: item)
+    }
+    
     // MARK: - Actions
     
     @IBAction func addItem() {
@@ -79,7 +83,7 @@ extension ToDoViewController {
         }
         
         cell.configureWith(item) { [weak self] item in
-            
+            self?.toggleItem(item)
         }
         
         return cell

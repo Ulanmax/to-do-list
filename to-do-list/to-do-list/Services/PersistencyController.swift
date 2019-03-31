@@ -29,5 +29,12 @@ class PersistencyController {
             }
             return item
     }
+    
+    func toggleCompleted(item: ToDoItem) {
+        guard let realm = item.realm else { return }
+        try! realm.write {
+            item.isCompleted = !item.isCompleted
+        }
+    }
 
 }
