@@ -15,7 +15,7 @@ class PersistencyController {
     
     static let sharedInstance = PersistencyController()
     
-    static func all(in realm: Realm = try! Realm()) -> Results<ToDoItem> {
+    func all(in realm: Realm = try! Realm()) -> Results<ToDoItem> {
         return realm.objects(ToDoItem.self)
             .sorted(byKeyPath: ToDoItem.Property.isCompleted.rawValue)
     }
