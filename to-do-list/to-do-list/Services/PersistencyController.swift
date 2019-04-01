@@ -8,6 +8,8 @@
 
 import Foundation
 import RealmSwift
+import RxRealm
+import RxSwift
 
 class PersistencyController {
     
@@ -28,6 +30,13 @@ class PersistencyController {
                 realm.add(item)
             }
             return item
+    }
+    
+    func update(item: ToDoItem, text: String) {
+        guard let realm = item.realm else { return }
+        try! realm.write {
+            item.text = text
+        }
     }
     
     func delete(item: ToDoItem) {

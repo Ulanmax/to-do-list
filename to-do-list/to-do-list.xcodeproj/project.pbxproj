@@ -19,6 +19,7 @@
 		004A3F902251171000760350 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004A3F8F2251171000760350 /* ToDo.storyboard */; };
 		004A3F922251207800760350 /* UserInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3F912251207800760350 /* UserInputAlert.swift */; };
 		004A3F952251209700760350 /* UITableView+RealmChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3F942251209700760350 /* UITableView+RealmChanges.swift */; };
+		005E7DAC2251EF6E005C959A /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */; };
 		1D17A1536E8E418F8982B619 /* Pods_to_do_listTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F614012768A90DEB75D9B3 /* Pods_to_do_listTests.framework */; };
 		3C9B0E8F1B848BE94E535983 /* Pods_to_do_listUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51874874226D757991EFFAF /* Pods_to_do_listUITests.framework */; };
 		450E7B11B51D76EFB5B6AE73 /* Pods_to_do_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DD8D24D8FE5BA243171DF4 /* Pods_to_do_list.framework */; };
@@ -60,6 +61,7 @@
 		004A3F8F2251171000760350 /* ToDo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
 		004A3F912251207800760350 /* UserInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputAlert.swift; sourceTree = "<group>"; };
 		004A3F942251209700760350 /* UITableView+RealmChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RealmChanges.swift"; sourceTree = "<group>"; };
+		005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
 		17C78DD324B8F7635576F7EE /* Pods-to-do-list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-to-do-list.debug.xcconfig"; path = "Pods/Target Support Files/Pods-to-do-list/Pods-to-do-list.debug.xcconfig"; sourceTree = "<group>"; };
 		34FEE8A05264675941F02E3A /* Pods-to-do-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-to-do-list.release.xcconfig"; path = "Pods/Target Support Files/Pods-to-do-list/Pods-to-do-list.release.xcconfig"; sourceTree = "<group>"; };
 		41DD8D24D8FE5BA243171DF4 /* Pods_to_do_list.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_to_do_list.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3F8B225116F200760350 /* ToDoTableViewCell.swift */,
+				005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */,
 				004A3F8D225116FC00760350 /* ToDoViewController.swift */,
 				004A3F8F2251171000760350 /* ToDo.storyboard */,
 			);
@@ -381,6 +384,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -389,6 +393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +412,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -415,6 +421,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005E7DAC2251EF6E005C959A /* ToDoViewModel.swift in Sources */,
 				004A3F52225100C100760350 /* AppDelegate.swift in Sources */,
 				004A3F8622510C0300760350 /* ToDoItem.swift in Sources */,
 				004A3F922251207800760350 /* UserInputAlert.swift in Sources */,

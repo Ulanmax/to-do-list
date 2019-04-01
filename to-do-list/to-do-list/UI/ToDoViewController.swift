@@ -97,6 +97,14 @@ extension ToDoViewController {
 // MARK: - Table View Delegate
 
 extension ToDoViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = items?[indexPath.row] else { return }
+        userInputAlert("Edit Todo Item", text: item.text) { text in
+            PersistencyController.sharedInstance.update(item: item, text: text)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
