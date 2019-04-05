@@ -20,6 +20,11 @@
 		004A3F922251207800760350 /* UserInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3F912251207800760350 /* UserInputAlert.swift */; };
 		004A3F952251209700760350 /* UITableView+RealmChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3F942251209700760350 /* UITableView+RealmChanges.swift */; };
 		005E7DAC2251EF6E005C959A /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */; };
+		00E3D462225712270048F81B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D460225712260048F81B /* BaseCoordinator.swift */; };
+		00E3D463225712270048F81B /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D461225712260048F81B /* StoryboardInitializable.swift */; };
+		00E3D465225713320048F81B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D464225713320048F81B /* AppCoordinator.swift */; };
+		00E3D467225713780048F81B /* ToDoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D466225713780048F81B /* ToDoCoordinator.swift */; };
+		00E3D469225748C50048F81B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D468225748C50048F81B /* Notification.swift */; };
 		1D17A1536E8E418F8982B619 /* Pods_to_do_listTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F614012768A90DEB75D9B3 /* Pods_to_do_listTests.framework */; };
 		3C9B0E8F1B848BE94E535983 /* Pods_to_do_listUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51874874226D757991EFFAF /* Pods_to_do_listUITests.framework */; };
 		450E7B11B51D76EFB5B6AE73 /* Pods_to_do_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DD8D24D8FE5BA243171DF4 /* Pods_to_do_list.framework */; };
@@ -62,6 +67,11 @@
 		004A3F912251207800760350 /* UserInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputAlert.swift; sourceTree = "<group>"; };
 		004A3F942251209700760350 /* UITableView+RealmChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RealmChanges.swift"; sourceTree = "<group>"; };
 		005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		00E3D460225712260048F81B /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		00E3D461225712260048F81B /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		00E3D464225713320048F81B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		00E3D466225713780048F81B /* ToDoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCoordinator.swift; sourceTree = "<group>"; };
+		00E3D468225748C50048F81B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		17C78DD324B8F7635576F7EE /* Pods-to-do-list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-to-do-list.debug.xcconfig"; path = "Pods/Target Support Files/Pods-to-do-list/Pods-to-do-list.debug.xcconfig"; sourceTree = "<group>"; };
 		34FEE8A05264675941F02E3A /* Pods-to-do-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-to-do-list.release.xcconfig"; path = "Pods/Target Support Files/Pods-to-do-list/Pods-to-do-list.release.xcconfig"; sourceTree = "<group>"; };
 		41DD8D24D8FE5BA243171DF4 /* Pods_to_do_list.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_to_do_list.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,9 +138,10 @@
 			children = (
 				004A3F5D225100C200760350 /* Info.plist */,
 				004A3F51225100C100760350 /* AppDelegate.swift */,
+				00E3D464225713320048F81B /* AppCoordinator.swift */,
 				004A3F7F225101E600760350 /* Assets */,
 				004A3F80225101EC00760350 /* Helpers */,
-				004A3F81225101F200760350 /* Entities */,
+				004A3F81225101F200760350 /* Domain */,
 				004A3F82225101FF00760350 /* Services */,
 				004A3F832251020A00760350 /* UI */,
 			);
@@ -167,18 +178,22 @@
 		004A3F80225101EC00760350 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				00E3D460225712260048F81B /* BaseCoordinator.swift */,
+				00E3D461225712260048F81B /* StoryboardInitializable.swift */,
 				004A3F912251207800760350 /* UserInputAlert.swift */,
 				004A3F942251209700760350 /* UITableView+RealmChanges.swift */,
+				00E3D468225748C50048F81B /* Notification.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		004A3F81225101F200760350 /* Entities */ = {
+		004A3F81225101F200760350 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				004A3F8522510C0300760350 /* ToDoItem.swift */,
+				00E3D46B2257494E0048F81B /* UseCases */,
+				00E3D46A225749440048F81B /* Entities */,
 			);
-			path = Entities;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		004A3F82225101FF00760350 /* Services */ = {
@@ -193,11 +208,27 @@
 			isa = PBXGroup;
 			children = (
 				004A3F8B225116F200760350 /* ToDoTableViewCell.swift */,
+				00E3D466225713780048F81B /* ToDoCoordinator.swift */,
 				005E7DAB2251EF6E005C959A /* ToDoViewModel.swift */,
 				004A3F8D225116FC00760350 /* ToDoViewController.swift */,
 				004A3F8F2251171000760350 /* ToDo.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		00E3D46A225749440048F81B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				004A3F8522510C0300760350 /* ToDoItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		00E3D46B2257494E0048F81B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		1707A7D7C6CE3EBE39179F2B /* Frameworks */ = {
@@ -472,11 +503,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E3D465225713320048F81B /* AppCoordinator.swift in Sources */,
 				005E7DAC2251EF6E005C959A /* ToDoViewModel.swift in Sources */,
+				00E3D467225713780048F81B /* ToDoCoordinator.swift in Sources */,
+				00E3D462225712270048F81B /* BaseCoordinator.swift in Sources */,
 				004A3F52225100C100760350 /* AppDelegate.swift in Sources */,
 				004A3F8622510C0300760350 /* ToDoItem.swift in Sources */,
 				004A3F922251207800760350 /* UserInputAlert.swift in Sources */,
+				00E3D469225748C50048F81B /* Notification.swift in Sources */,
 				004A3F952251209700760350 /* UITableView+RealmChanges.swift in Sources */,
+				00E3D463225712270048F81B /* StoryboardInitializable.swift in Sources */,
 				004A3F8822510EE500760350 /* PersistencyController.swift in Sources */,
 				004A3F8E225116FC00760350 /* ToDoViewController.swift in Sources */,
 				004A3F8C225116F200760350 /* ToDoTableViewCell.swift in Sources */,
