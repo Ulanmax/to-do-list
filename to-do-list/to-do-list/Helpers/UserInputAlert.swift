@@ -24,6 +24,9 @@ func userInputAlert(_ title: String, isSecure: Bool = false, text: String? = nil
         callback(text)
     })
     
+    alert.addAction(UIAlertAction(title: "Cancel", style: .default) { _ in
+    })
+    
     let root = UIApplication.shared.keyWindow?.rootViewController
     root?.present(alert, animated: true, completion: nil)
 }
